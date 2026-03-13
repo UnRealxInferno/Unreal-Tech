@@ -280,26 +280,33 @@
                 <span class="field-error" aria-live="polite"></span>
               </div>
             </div>
-            <div class="form-group">
-              <label for="service">Service Required</label>
-              <select id="service" name="service">
-                <option value="">— Select a service —</option>
-                <option value="home-user-package">Home User Package</option>
-                <option value="web-presence">Web Presence &amp; Hosting</option>
-                <option value="pc-repair">PC Repair</option>
-                <option value="gaming-pc">Gaming PC Build &amp; Advice</option>
-                <option value="laptop-repair">Laptop Repair</option>
-                <option value="msp">Managed IT (MSP)</option>
-                <option value="small-biz-it">Small Business IT &amp; Asset Management</option>
-                <option value="cybersecurity">Cybersecurity</option>
-                <option value="cloud-backup">Cloud &amp; Backup</option>
-                <option value="networking">Network &amp; Connectivity</option>
-                <option value="other">Other</option>
-              </select>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+44 7700 000000" autocomplete="tel" aria-describedby="phone-hint" />
+                <span class="field-hint" id="phone-hint">Optional — include country code if outside UK</span>
+              </div>
+              <div class="form-group">
+                <label for="service">Service Required</label>
+                <select id="service" name="service">
+                  <option value="">— Select a service —</option>
+                  <option value="home-user-package">Home User Package</option>
+                  <option value="web-presence">Web Presence &amp; Hosting</option>
+                  <option value="pc-repair">PC Repair</option>
+                  <option value="gaming-pc">Gaming PC Build &amp; Advice</option>
+                  <option value="laptop-repair">Laptop Repair</option>
+                  <option value="msp">Managed IT (MSP)</option>
+                  <option value="small-biz-it">Small Business IT &amp; Asset Management</option>
+                  <option value="cybersecurity">Cybersecurity</option>
+                  <option value="cloud-backup">Cloud &amp; Backup</option>
+                  <option value="networking">Network &amp; Connectivity</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
             <div class="form-group">
               <label for="message">Message <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="5" placeholder="Describe your issue or requirements…" required></textarea>
+              <textarea id="message" name="message" rows="4" placeholder="Describe your issue or requirements…" required></textarea>
               <span class="field-error" aria-live="polite"></span>
             </div>
             <button type="submit" class="btn btn-primary btn-full">Send Message</button>

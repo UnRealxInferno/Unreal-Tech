@@ -500,6 +500,10 @@ button { font-family: inherit; cursor: pointer; }
   color: #f85149;
   min-height: 1em;
 }
+.field-hint {
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+}
 .form-note {
   font-size: 0.78rem;
   color: var(--clr-text-muted);
