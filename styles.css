@@ -299,6 +299,10 @@ button { font-family: inherit; cursor: pointer; }
   border-color: var(--clr-accent-dk);
   background: linear-gradient(135deg, rgba(31, 111, 235, 0.08) 0%, var(--clr-bg) 100%);
 }
+.service-card.featured.featured-home {
+  border-color: var(--clr-success);
+  background: linear-gradient(135deg, rgba(63, 185, 80, 0.08) 0%, var(--clr-bg) 100%);
+}
 .service-badge {
   position: absolute;
   top: -1px;
@@ -311,6 +315,9 @@ button { font-family: inherit; cursor: pointer; }
   text-transform: uppercase;
   padding: 0.25rem 0.75rem;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+.service-badge.badge-home {
+  background: var(--clr-success);
 }
 .service-icon {
   font-size: 2.4rem;
