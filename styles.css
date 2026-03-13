@@ -618,8 +618,18 @@ button { font-family: inherit; cursor: pointer; }
 .back-to-top:hover { transform: translateY(-3px); color: var(--clr-bg); }
 
 /* ============================================================
-   SERVICE CARD — "LEARN MORE" LINK
+   SERVICE CARD — clickable card link & "LEARN MORE" LINK
    ============================================================ */
+/* When the entire service card is an <a> element */
+a.service-card {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+a.service-card h3 { color: var(--clr-white); }
+a.service-card p,
+a.service-card .service-list li { color: var(--clr-text-muted); }
+
 .service-link {
   display: inline-flex;
   align-items: center;
@@ -786,7 +796,7 @@ button { font-family: inherit; cursor: pointer; }
 .included { background: var(--clr-surface); }
 .included-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 .included-item {
@@ -917,7 +927,7 @@ button { font-family: inherit; cursor: pointer; }
 .related-services { background: var(--clr-bg); }
 .related-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 .related-card {
@@ -942,6 +952,37 @@ button { font-family: inherit; cursor: pointer; }
 .related-link:hover { color: var(--clr-white); }
 
 /* ============================================================
+   ABOUT FULL PAGE
+   ============================================================ */
+.about-full { background: var(--clr-bg); }
+.about-story-layout {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-story-visual {
+  position: sticky;
+  top: calc(var(--nav-height) + 2rem);
+  text-align: center;
+}
+.about-story-body h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  color: var(--clr-white);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+.about-story-body p {
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 1.25rem;
+  line-height: 1.8;
+}
+.about-story-body strong { color: var(--clr-white); }
+.about-story-body .btn { margin-top: 0.75rem; }
+
+/* ============================================================
    RESPONSIVE
    ============================================================ */
 @media (max-width: 900px) {
@@ -952,6 +993,11 @@ button { font-family: inherit; cursor: pointer; }
   .footer-legal { grid-column: 1 / -1; text-align: left; }
   .detail-layout { grid-template-columns: 1fr; }
   .detail-sidebar { position: static; }
+  .included-grid { grid-template-columns: repeat(2, 1fr); }
+  .related-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-steps { grid-template-columns: repeat(2, 1fr); }
+  .about-story-layout { grid-template-columns: 1fr; }
+  .about-story-visual { display: none; }
 }
 
 @media (max-width: 640px) {
@@ -986,4 +1032,6 @@ button { font-family: inherit; cursor: pointer; }
   .footer-layout { grid-template-columns: 1fr; }
   .footer-legal { text-align: left; }
   .about-visual { display: none; }
+  .included-grid { grid-template-columns: 1fr; }
+  .related-grid { grid-template-columns: 1fr; }
 }
