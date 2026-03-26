@@ -75,8 +75,8 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
 
-      // Spam checks: honeypot filled or form submitted in under 3 seconds
-      if ((honeypot && honeypot.value) || (Date.now() - formLoadedAt < 3000)) {
+      // Spam checks: honeypot filled or form submitted in under 5 seconds
+      if ((honeypot && honeypot.value) || (Date.now() - formLoadedAt < 5000)) {
         // Silently ignore — look like a success to bots
         form.reset();
         if (successMsg) successMsg.hidden = false;
@@ -96,14 +96,15 @@
       const serviceVal = (form.querySelector('#service').value || '').trim();
       const messageVal = fields.message.el.value.trim();
 
+      const serviceText = serviceVal ? form.querySelector('#service option:checked').textContent : '';
       const subject = encodeURIComponent(
-        'Website Enquiry' + (serviceVal ? ' – ' + form.querySelector('#service option:checked').textContent : '')
+        'Website Enquiry' + (serviceText ? ' – ' + serviceText : '')
       );
       const body = encodeURIComponent(
         'Name: ' + nameVal +
         '\nEmail: ' + emailVal +
         (phoneVal ? '\nPhone: ' + phoneVal : '') +
-        (serviceVal ? '\nService: ' + form.querySelector('#service option:checked').textContent : '') +
+        (serviceText ? '\nService: ' + serviceText : '') +
         '\n\n' + messageVal
       );
 
