@@ -46,8 +46,10 @@
   /* ---------- Contact Form Validation ---------- */
   const form = document.getElementById('contact-form');
   const successMsg = document.getElementById('form-success');
+  const formLoadedAt = Date.now();
 
   if (form) {
+    const honeypot = form.querySelector('#website');
     const fields = {
       name:    { el: form.querySelector('#name'),    msg: form.querySelector('#name + .field-error'),    validate: v => v.trim().length >= 2 ? '' : 'Please enter your full name.' },
       email:   { el: form.querySelector('#email'),   msg: form.querySelector('#email + .field-error'),   validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) ? '' : 'Please enter a valid email address.' },
@@ -73,17 +75,45 @@
     form.addEventListener('submit', e => {
       e.preventDefault();
 
+      // Spam checks: honeypot filled or form submitted in under 3 seconds
+      if ((honeypot && honeypot.value) || (Date.now() - formLoadedAt < 3000)) {
+        // Silently ignore — look like a success to bots
+        form.reset();
+        if (successMsg) successMsg.hidden = false;
+        return;
+      }
+
       const allValid = Object.keys(fields)
         .map(key => validateField(key))
         .every(Boolean);
 
       if (!allValid) return;
 
-      // Simulate submission (replace with real fetch/API call)
+      // Build mailto link and open user's email client
+      const nameVal    = fields.name.el.value.trim();
+      const emailVal   = fields.email.el.value.trim();
+      const phoneVal   = (form.querySelector('#phone').value || '').trim();
+      const serviceVal = (form.querySelector('#service').value || '').trim();
+      const messageVal = fields.message.el.value.trim();
+
+      const subject = encodeURIComponent(
+        'Website Enquiry' + (serviceVal ? ' – ' + form.querySelector('#service option:checked').textContent : '')
+      );
+      const body = encodeURIComponent(
+        'Name: ' + nameVal +
+        '\nEmail: ' + emailVal +
+        (phoneVal ? '\nPhone: ' + phoneVal : '') +
+        (serviceVal ? '\nService: ' + form.querySelector('#service option:checked').textContent : '') +
+        '\n\n' + messageVal
+      );
+
       const submitBtn = form.querySelector('[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
+      window.location.href = 'mailto:admin@unrealtech.co.uk?subject=' + subject + '&body=' + body;
+
+      // Reset form after a short delay to allow mailto to open
       setTimeout(() => {
         form.reset();
         Object.keys(fields).forEach(key => {
@@ -96,7 +126,7 @@
         }
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Message';
-      }, 900);
+      }, 1000);
     });
   }
 
