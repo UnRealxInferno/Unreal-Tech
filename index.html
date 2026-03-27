@@ -23,29 +23,18 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "name": "Unreal Tech",
     "url": "https://unrealtech.co.uk",
     "telephone": "+441234567890",
     "email": "admin@unrealtech.co.uk",
     "description": "Google Workspace MSP and IT support for home users, home businesses, and growing small and medium businesses.",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "123 Tech Street",
-      "addressLocality": "Your Town",
-      "postalCode": "AB1 2CD",
-      "addressCountry": "GB"
-    },
-    "openingHoursSpecification": [
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
-      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
-    ],
+    "areaServed": { "@type": "Country", "name": "United Kingdom" },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
       "name": "IT Services",
       "itemListElement": [
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Workspace", "url": "https://unrealtech.co.uk/services/google-workspace.html" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PC, Laptop &amp; Gaming Builds", "url": "https://unrealtech.co.uk/services/pc-laptop-gaming.html" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home User Package", "url": "https://unrealtech.co.uk/services/home-user-package.html" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed IT (MSP)", "url": "https://unrealtech.co.uk/services/managed-it.html" } },
         { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cybersecurity", "url": "https://unrealtech.co.uk/services/cybersecurity.html" } },
@@ -117,7 +106,7 @@
         <div class="section-header">
           <p class="section-kicker">What We Do</p>
           <h2 id="services-heading">Our Services</h2>
-          <p class="section-intro">From a broken screen to a full Google Workspace rollout—we support home users, home businesses, and growing SMBs every step of the way.</p>
+          <p class="section-intro">From remote IT support and security to a full Google Workspace rollout—we support home users, home businesses, and growing SMBs every step of the way.</p>
         </div>
         <div class="services-grid">
 
@@ -133,26 +122,15 @@
             </ul>
           </a>
 
-          <a href="services/pc-laptop-gaming.html" class="service-card">
-            <div class="service-icon" aria-hidden="true">&#128187;</div>
-            <h3>PC, Laptop &amp; Gaming Builds</h3>
-            <p>From cracked screens and virus removal to bespoke gaming rigs—we handle all hardware repairs, upgrades, and custom builds, fast.</p>
-            <ul class="service-list">
-              <li>Diagnosis, component replacement &amp; upgrades</li>
-              <li>Screen, battery &amp; keyboard repair</li>
-              <li>Custom gaming PC builds &amp; component advice</li>
-            </ul>
-          </a>
-
           <a href="services/home-user-package.html" class="service-card featured featured-home">
             <div class="service-badge badge-home">Home Users</div>
             <div class="service-icon" aria-hidden="true">&#127968;</div>
             <h3>Home User Package</h3>
-            <p>Everything an individual needs to stay protected and productive—repairs, antivirus, and security in one convenient package.</p>
+            <p>Remote IT support, software troubleshooting, antivirus setup, and security hardening for home users—no tech knowledge needed, no travel required.</p>
             <ul class="service-list">
-              <li>PC &amp; laptop repairs &amp; tune-ups</li>
+              <li>Remote troubleshooting &amp; software fixes</li>
               <li>Antivirus &amp; security setup</li>
-              <li>Remote support &amp; troubleshooting</li>
+              <li>New device setup &amp; data transfer</li>
             </ul>
           </a>
 
@@ -224,24 +202,14 @@
             <p>Whether you're a sole trader scaling up or an SMB adding your first IT team, we grow with you—flexible support that fits where you are now and where you're headed.</p>
           </div>
           <div class="feature">
-            <div class="feature-icon" aria-hidden="true">&#9989;</div>
-            <h3>No Fix, No Fee</h3>
-            <p>If we can't fix it, you don't pay. We stand behind our work 100%.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true">&#128336;</div>
-            <h3>Fast Turnaround</h3>
-            <p>Most repairs completed within 24 hours. Same-day service available for urgent needs.</p>
+            <div class="feature-icon" aria-hidden="true">&#128187;</div>
+            <h3>Remote-First Support</h3>
+            <p>We support clients UK-wide via secure remote tools—most issues resolved the same day, without waiting for an engineer visit. No travel, no delays.</p>
           </div>
           <div class="feature">
             <div class="feature-icon" aria-hidden="true">&#128176;</div>
             <h3>Transparent Pricing</h3>
             <p>No hidden charges—clear, upfront quotes before we start any work.</p>
-          </div>
-          <div class="feature">
-            <div class="feature-icon" aria-hidden="true">&#128101;</div>
-            <h3>Local &amp; Personal</h3>
-            <p>You'll always speak to the person doing the work—no call centres, no jargon.</p>
           </div>
           <div class="feature">
             <div class="feature-icon" aria-hidden="true">&#128737;</div>
@@ -268,7 +236,7 @@
           <h2 id="about-heading">Google Workspace Partner &amp; MSP for Home Users and Growing Businesses</h2>
           <p>Unreal Tech was founded on a simple belief: great IT support should be accessible to everyone—not just large enterprises. We're a certified Google Workspace partner and managed IT provider, specialising in home users, home businesses, and small &amp; medium companies that are ready to grow.</p>
           <p>Whether you're a sole trader setting up professional email, a home business getting your first IT system in place, or an expanding SMB that needs a reliable technology partner—we're built for you.</p>
-          <p>Our engineers bring years of hands-on experience across Google Workspace, cloud infrastructure, cybersecurity, and consumer electronics. Based locally, we build long-term relationships—not just fix tickets and move on.</p>
+          <p>Our engineers bring years of hands-on experience across Google Workspace, cloud infrastructure, and cybersecurity. As a fully remote team, we support clients UK-wide—no call centres, no travel delays, just real engineers who care.</p>
           <a href="about.html" class="btn btn-primary">Our Story</a>
         </div>
       </div>
@@ -319,7 +287,6 @@
                   <option value="">— Select a service —</option>
                   <option value="google-workspace">Google Workspace</option>
                   <option value="home-user-package">Home User Package</option>
-                  <option value="pc-laptop-gaming">PC, Laptop &amp; Gaming Builds</option>
                   <option value="managed-it">Managed IT (MSP)</option>
                   <option value="cybersecurity">Cybersecurity</option>
                   <option value="cloud-networking">Cloud &amp; Networking</option>
@@ -350,10 +317,10 @@
 
           <div class="contact-info">
             <div class="contact-item">
-              <span class="contact-icon" aria-hidden="true">&#128205;</span>
+              <span class="contact-icon" aria-hidden="true">&#128187;</span>
               <div>
-                <strong>Visit Us</strong>
-                <p>123 Tech Street<br />Your Town, AB1 2CD</p>
+                <strong>Remote-First</strong>
+                <p>We support clients UK-wide via secure remote tools—no travel, no waiting for a site visit.</p>
               </div>
             </div>
             <div class="contact-item">
