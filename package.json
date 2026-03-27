@@ -1,0 +1,12 @@
+{
+  "name": "unreal-tech",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Unreal Tech – Google Workspace MSP & IT Support website",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "resend": "^6.9.4"
+  }
+}

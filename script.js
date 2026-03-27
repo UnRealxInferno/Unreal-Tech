@@ -89,45 +89,57 @@
 
       if (!allValid) return;
 
-      // Build mailto link and open user's email client
-      const nameVal    = fields.name.el.value.trim();
-      const emailVal   = fields.email.el.value.trim();
-      const phoneVal   = (form.querySelector('#phone').value || '').trim();
-      const serviceVal = (form.querySelector('#service').value || '').trim();
-      const messageVal = fields.message.el.value.trim();
-
-      const serviceText = serviceVal ? form.querySelector('#service option:checked').textContent : '';
-      const subject = encodeURIComponent(
-        'Website Enquiry' + (serviceText ? ' – ' + serviceText : '')
-      );
-      const body = encodeURIComponent(
-        'Name: ' + nameVal +
-        '\nEmail: ' + emailVal +
-        (phoneVal ? '\nPhone: ' + phoneVal : '') +
-        (serviceText ? '\nService: ' + serviceText : '') +
-        '\n\n' + messageVal
-      );
-
       const submitBtn = form.querySelector('[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
 
-      window.location.href = 'mailto:admin@unrealtech.co.uk?subject=' + subject + '&body=' + body;
+      const serviceEl = form.querySelector('#service');
+      const serviceText = serviceEl && serviceEl.value ? serviceEl.options[serviceEl.selectedIndex].text : '';
 
-      // Reset form after a short delay to allow mailto to open
-      setTimeout(() => {
-        form.reset();
-        Object.keys(fields).forEach(key => {
-          fields[key].el.classList.remove('invalid');
-          fields[key].msg.textContent = '';
+      const payload = {
+        name:    fields.name.el.value.trim(),
+        email:   fields.email.el.value.trim(),
+        phone:   (form.querySelector('#phone').value || '').trim(),
+        service: serviceText,
+        message: fields.message.el.value.trim(),
+        website: honeypot ? honeypot.value : '',
+        _loaded: formLoadedAt,
+      };
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+        .then(res => {
+          if (!res.ok) return res.json().then(d => Promise.reject(d));
+          return res.json();
+        })
+        .then(() => {
+          form.reset();
+          Object.keys(fields).forEach(key => {
+            fields[key].el.classList.remove('invalid');
+            fields[key].msg.textContent = '';
+          });
+          if (successMsg) {
+            successMsg.hidden = false;
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        })
+        .catch(err => {
+          const errMsg = (err && err.error) || 'Something went wrong. Please try again.';
+          if (successMsg) {
+            successMsg.hidden = false;
+            successMsg.textContent = errMsg;
+            successMsg.style.borderColor = '#f85149';
+            successMsg.style.color = '#f85149';
+            successMsg.style.background = 'rgba(248,81,73,0.12)';
+          }
+        })
+        .finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message';
         });
-        if (successMsg) {
-          successMsg.hidden = false;
-          successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Send Message';
-      }, 1000);
     });
   }
 
