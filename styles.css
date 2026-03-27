@@ -319,6 +319,14 @@ button { font-family: inherit; cursor: pointer; }
 .service-badge.badge-home {
   background: var(--clr-success);
 }
+.service-card.featured.featured-google {
+  border-color: #fbbc04;
+  background: linear-gradient(135deg, rgba(251, 188, 4, 0.07) 0%, var(--clr-bg) 100%);
+}
+.service-badge.badge-google {
+  background: #fbbc04;
+  color: #1a1a1a;
+}
 .service-icon {
   font-size: 2.4rem;
   margin-bottom: 1rem;
@@ -517,6 +525,19 @@ button { font-family: inherit; cursor: pointer; }
   padding: 0.75rem 1rem;
   text-align: center;
   font-weight: 600;
+}
+.form-error-msg {
+  background: rgba(248, 81, 73, 0.12);
+  border: 1px solid #f85149;
+  border-radius: var(--radius-sm);
+  color: #f85149;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+.h-captcha {
+  display: flex;
+  justify-content: flex-start;
 }
 
 /* Contact info sidebar */
