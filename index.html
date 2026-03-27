@@ -5,7 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Unreal Tech – Expert IT Support, Web Presence &amp; Hosting, Managed IT Services, and Cybersecurity solutions for home users and small businesses." />
   <title>Unreal Tech | IT Support &amp; Cybersecurity</title>
+  <link rel="canonical" href="https://unrealtech.co.uk/" />
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Unreal Tech | IT Support, Cybersecurity &amp; Web Presence" />
+  <meta property="og:description" content="Expert IT support, web presence &amp; hosting, managed IT services, and cybersecurity for home users and small businesses." />
+  <meta property="og:url" content="https://unrealtech.co.uk/" />
+  <meta property="og:site_name" content="Unreal Tech" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Unreal Tech | IT Support, Cybersecurity &amp; Web Presence" />
+  <meta name="twitter:description" content="Expert IT support, web presence &amp; hosting, managed IT services, and cybersecurity for home users and small businesses." />
   <link rel="stylesheet" href="styles.css" />
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Unreal Tech",
+    "url": "https://unrealtech.co.uk",
+    "telephone": "+441234567890",
+    "email": "hello@unrealtech.co.uk",
+    "description": "Expert IT support, web presence and hosting, managed IT services, and cybersecurity for home users and small businesses.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Tech Street",
+      "addressLocality": "Your Town",
+      "postalCode": "AB1 2CD",
+      "addressCountry": "GB"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "14:00" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "IT Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "PC, Laptop &amp; Gaming Builds", "url": "https://unrealtech.co.uk/services/pc-laptop-gaming.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home User Package", "url": "https://unrealtech.co.uk/services/home-user-package.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed IT (MSP)", "url": "https://unrealtech.co.uk/services/managed-it.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cybersecurity", "url": "https://unrealtech.co.uk/services/cybersecurity.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud &amp; Networking", "url": "https://unrealtech.co.uk/services/cloud-networking.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Presence &amp; Hosting", "url": "https://unrealtech.co.uk/services/web-presence-hosting.html" } }
+      ]
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -22,7 +70,7 @@
       <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#services">Services</a></li>
         <li><a href="#why-us">Why Us</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="about.html">About</a></li>
         <li><a href="#contact" class="btn btn-sm">Get in Touch</a></li>
       </ul>
     </nav>
@@ -68,7 +116,7 @@
         </div>
         <div class="services-grid">
 
-          <article class="service-card" tabindex="0">
+          <a href="services/pc-laptop-gaming.html" class="service-card">
             <div class="service-icon" aria-hidden="true">&#128187;</div>
             <h3>PC, Laptop &amp; Gaming Builds</h3>
             <p>From cracked screens and virus removal to bespoke gaming rigs—we handle all hardware repairs, upgrades, and custom builds, fast.</p>
@@ -77,9 +125,9 @@
               <li>Screen, battery &amp; keyboard repair</li>
               <li>Custom gaming PC builds &amp; component advice</li>
             </ul>
-          </article>
+          </a>
 
-          <article class="service-card featured featured-home" tabindex="0">
+          <a href="services/home-user-package.html" class="service-card featured featured-home">
             <div class="service-badge badge-home">Home Users</div>
             <div class="service-icon" aria-hidden="true">&#127968;</div>
             <h3>Home User Package</h3>
@@ -89,9 +137,9 @@
               <li>Antivirus &amp; security setup</li>
               <li>Remote support &amp; troubleshooting</li>
             </ul>
-          </article>
+          </a>
 
-          <article class="service-card featured" tabindex="0">
+          <a href="services/managed-it.html" class="service-card featured">
             <div class="service-badge">Most Popular</div>
             <div class="service-icon" aria-hidden="true">&#128736;</div>
             <h3>Managed IT (MSP)</h3>
@@ -101,9 +149,9 @@
               <li>Patch management &amp; asset inventory</li>
               <li>Cloud services &amp; staff onboarding</li>
             </ul>
-          </article>
+          </a>
 
-          <article class="service-card" tabindex="0">
+          <a href="services/cybersecurity.html" class="service-card">
             <div class="service-icon" aria-hidden="true">&#128274;</div>
             <h3>Cybersecurity</h3>
             <p>Protect your data from modern threats with audits, endpoint protection, and staff training.</p>
@@ -112,9 +160,9 @@
               <li>Firewall &amp; endpoint protection</li>
               <li>Incident response &amp; recovery</li>
             </ul>
-          </article>
+          </a>
 
-          <article class="service-card" tabindex="0">
+          <a href="services/cloud-networking.html" class="service-card">
             <div class="service-icon" aria-hidden="true">&#9729;</div>
             <h3>Cloud &amp; Networking</h3>
             <p>Reliable cloud backup, seamless migrations, and high-performance networks for your home or business.</p>
@@ -123,9 +171,9 @@
               <li>Wi-Fi design, cabling &amp; switch configuration</li>
               <li>VPN setup for remote workers</li>
             </ul>
-          </article>
+          </a>
 
-          <article class="service-card" tabindex="0">
+          <a href="services/web-presence-hosting.html" class="service-card">
             <div class="service-icon" aria-hidden="true">&#127760;</div>
             <h3>Web Presence &amp; Hosting</h3>
             <p>Get your business online with a professional website, reliable hosting, and a credible digital presence.</p>
@@ -134,7 +182,7 @@
               <li>Domain, hosting &amp; DNS setup</li>
               <li>SEO &amp; online visibility</li>
             </ul>
-          </article>
+          </a>
 
         </div>
       </div>
@@ -194,7 +242,7 @@
           <p>Unreal Tech was founded on a simple belief: great IT support should be accessible to everyone—not just large enterprises. Whether you're a home user, a freelancer, or a growing small business, you deserve reliable technology and expert help when things go wrong.</p>
           <p>Our engineers bring years of hands-on experience across consumer electronics, enterprise infrastructure, and cybersecurity. We invest in continuous training so that we're always equipped to tackle the latest challenges.</p>
           <p>Based locally, we pride ourselves on building long-term relationships with our customers—not just fixing tickets and moving on.</p>
-          <a href="#contact" class="btn btn-primary">Meet the Team</a>
+          <a href="about.html" class="btn btn-primary">Our Story</a>
         </div>
       </div>
     </section>
@@ -303,7 +351,7 @@
         <ul role="list">
           <li><a href="#services">Services</a></li>
           <li><a href="#why-us">Why Us</a></li>
-          <li><a href="#about">About</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
