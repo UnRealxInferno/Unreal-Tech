@@ -271,6 +271,69 @@ button { font-family: inherit; cursor: pointer; }
   letter-spacing: 0.02em;
 }
 
+
+/* ============================================================
+   TRUST STRIP (Partners & Certifications)
+   ============================================================ */
+.trust-strip {
+  background: var(--clr-surface);
+  border-bottom: 1px solid var(--clr-border);
+  padding-block: 18px;
+}
+.trust-strip-inner {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+.trust-strip-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--clr-text-muted);
+  white-space: nowrap;
+}
+.trust-strip-label::after {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  background: var(--clr-border);
+  margin-left: 1.5rem;
+  vertical-align: middle;
+}
+.partner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--clr-badge-bg);
+  border: 1px solid var(--clr-badge-border);
+  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.9rem 0.45rem 0.7rem;
+}
+.google-g {
+  flex-shrink: 0;
+}
+.partner-badge-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.partner-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--clr-white);
+  letter-spacing: -0.01em;
+}
+.partner-tier {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
 /* ============================================================
    SERVICES
    ============================================================ */
