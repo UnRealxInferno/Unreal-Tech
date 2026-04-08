@@ -43,9 +43,14 @@
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  /* ---------- Contact Form Validation ---------- */
+  /* ---------- Contact Form ---------- */
   const form = document.getElementById('contact-form');
   const successMsg = document.getElementById('form-success');
+  const errorMsg = document.getElementById('form-error');
+
+  // Record when the page/form loaded (timing spam check)
+  const loadedAtEl = document.getElementById('_form_loaded_at');
+  if (loadedAtEl) loadedAtEl.value = Date.now();
 
   if (form) {
     const fields = {
@@ -70,8 +75,12 @@
       });
     });
 
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
+
+      // Client-side timing check (bots submit instantly)
+      const loadedAt = Number(loadedAtEl ? loadedAtEl.value : 0);
+      if (loadedAt && Date.now() - loadedAt < 3000) return;
 
       const allValid = Object.keys(fields)
         .map(key => validateField(key))
@@ -79,24 +88,51 @@
 
       if (!allValid) return;
 
-      // Simulate submission (replace with real fetch/API call)
+      // Check hCaptcha token is present
+      const captchaErrEl = document.getElementById('captcha-error');
+      const formData = new FormData(form);
+      const captchaToken = formData.get('h-captcha-response');
+      if (!captchaToken) {
+        if (captchaErrEl) captchaErrEl.textContent = 'Please complete the CAPTCHA.';
+        return;
+      }
+      if (captchaErrEl) captchaErrEl.textContent = '';
+
       const submitBtn = form.querySelector('[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending…';
+      if (successMsg) successMsg.hidden = true;
+      if (errorMsg) errorMsg.hidden = true;
 
-      setTimeout(() => {
-        form.reset();
-        Object.keys(fields).forEach(key => {
-          fields[key].el.classList.remove('invalid');
-          fields[key].msg.textContent = '';
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData,
         });
-        if (successMsg) {
-          successMsg.hidden = false;
-          successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        const data = await response.json();
+
+        if (data.success) {
+          form.reset();
+          Object.keys(fields).forEach(key => {
+            fields[key].el.classList.remove('invalid');
+            fields[key].msg.textContent = '';
+          });
+          // Re-stamp load time after reset
+          if (loadedAtEl) loadedAtEl.value = Date.now();
+          if (successMsg) {
+            successMsg.hidden = false;
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+        } else {
+          if (errorMsg) errorMsg.hidden = false;
         }
+      } catch {
+        if (errorMsg) errorMsg.hidden = false;
+      } finally {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Send Message';
-      }, 900);
+      }
     });
   }
 
