@@ -34,12 +34,8 @@
       "@type": "OfferCatalog",
       "name": "IT Services",
       "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Google Workspace", "url": "https://unrealtech.co.uk/services/google-workspace.html" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home User Package", "url": "https://unrealtech.co.uk/services/home-user-package.html" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Managed IT (MSP)", "url": "https://unrealtech.co.uk/services/managed-it.html" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cybersecurity", "url": "https://unrealtech.co.uk/services/cybersecurity.html" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cloud &amp; Networking", "url": "https://unrealtech.co.uk/services/cloud-networking.html" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Presence &amp; Hosting", "url": "https://unrealtech.co.uk/services/web-presence-hosting.html" } }
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Home Services", "url": "https://unrealtech.co.uk/services/home.html" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Business Services", "url": "https://unrealtech.co.uk/services/business.html" } }
       ]
     }
   }
@@ -130,72 +126,31 @@
         </div>
         <div class="services-grid">
 
-          <a href="services/google-workspace.html" class="service-card featured featured-google">
-            <div class="service-badge badge-google">Google Partner</div>
-            <div class="service-icon" aria-hidden="true">&#127381;</div>
-            <h3>Google Workspace</h3>
-            <p>Professional Gmail, Drive, Meet, and more—deployed and managed for your business by a certified Google Workspace partner.</p>
-            <ul class="service-list">
-              <li>Gmail, Calendar &amp; Meet for your domain</li>
-              <li>Google Drive &amp; Shared Drives setup</li>
-              <li>Migration from Microsoft 365 or legacy email</li>
-            </ul>
-          </a>
-
-          <a href="services/home-user-package.html" class="service-card featured featured-home">
+          <a href="services/home.html" class="service-card featured featured-home">
             <div class="service-badge badge-home">Home Users</div>
             <div class="service-icon" aria-hidden="true">&#127968;</div>
-            <h3>Home User Package</h3>
-            <p>Remote IT support, software troubleshooting, antivirus setup, and security hardening for home users—no tech knowledge needed, no travel required.</p>
+            <h3>Home Services</h3>
+            <p>Everything home users need—new device setup, remote troubleshooting, optional cybersecurity addons and ongoing IT support. No tech knowledge required, no travel needed.</p>
             <ul class="service-list">
-              <li>Remote troubleshooting &amp; software fixes</li>
-              <li>Antivirus &amp; security setup</li>
-              <li>New device setup &amp; data transfer</li>
+              <li>New devices &amp; setup</li>
+              <li>Device support &amp; troubleshooting</li>
+              <li>Cybersecurity addons</li>
+              <li>Remote IT support</li>
             </ul>
           </a>
 
-          <a href="services/managed-it.html" class="service-card featured">
-            <div class="service-badge">Most Popular</div>
-            <div class="service-icon" aria-hidden="true">&#128736;</div>
-            <h3>Managed IT (MSP)</h3>
-            <p>Outsource your IT worries. We proactively monitor, maintain, and support your systems so you can focus on your business.</p>
+          <a href="services/business.html" class="service-card featured">
+            <div class="service-badge">For Business</div>
+            <div class="service-icon" aria-hidden="true">&#128188;</div>
+            <h3>Business Services</h3>
+            <p>Comprehensive IT for growing businesses—from asset provision and device support to Google Workspace, cybersecurity, web presence and fully managed IT support.</p>
             <ul class="service-list">
-              <li>Remote monitoring &amp; helpdesk support</li>
-              <li>Patch management &amp; asset inventory</li>
-              <li>Cloud services &amp; staff onboarding</li>
-            </ul>
-          </a>
-
-          <a href="services/cybersecurity.html" class="service-card">
-            <div class="service-icon" aria-hidden="true">&#128274;</div>
-            <h3>Cybersecurity</h3>
-            <p>Protect your data from modern threats with audits, endpoint protection, and staff training.</p>
-            <ul class="service-list">
-              <li>Security audits &amp; assessments</li>
-              <li>Firewall &amp; endpoint protection</li>
-              <li>Incident response &amp; recovery</li>
-            </ul>
-          </a>
-
-          <a href="services/cloud-networking.html" class="service-card">
-            <div class="service-icon" aria-hidden="true">&#9729;</div>
-            <h3>Cloud &amp; Networking</h3>
-            <p>Reliable cloud backup, seamless migrations, and high-performance networks for your home or business.</p>
-            <ul class="service-list">
-              <li>Google Workspace migrations &amp; cloud backup</li>
-              <li>Wi-Fi design, cabling &amp; switch configuration</li>
-              <li>VPN setup for remote workers</li>
-            </ul>
-          </a>
-
-          <a href="services/web-presence-hosting.html" class="service-card">
-            <div class="service-icon" aria-hidden="true">&#127760;</div>
-            <h3>Web Presence &amp; Hosting</h3>
-            <p>Get your business online with a professional website, reliable hosting, and a credible digital presence.</p>
-            <ul class="service-list">
-              <li>Website design &amp; development</li>
-              <li>Domain, hosting &amp; DNS setup</li>
-              <li>SEO &amp; online visibility</li>
+              <li>New devices &amp; asset provision</li>
+              <li>Device support</li>
+              <li>Business cybersecurity</li>
+              <li>Google Workspace</li>
+              <li>IT support</li>
+              <li>Web presence &amp; support</li>
             </ul>
           </a>
 
@@ -305,12 +260,8 @@
                 <label for="service">Service Required</label>
                 <select id="service" name="service">
                   <option value="">— Select a service —</option>
-                  <option value="google-workspace">Google Workspace</option>
-                  <option value="home-user-package">Home User Package</option>
-                  <option value="managed-it">Managed IT (MSP)</option>
-                  <option value="cybersecurity">Cybersecurity</option>
-                  <option value="cloud-networking">Cloud &amp; Networking</option>
-                  <option value="web-presence">Web Presence &amp; Hosting</option>
+                  <option value="home-services">Home Services</option>
+                  <option value="business-services">Business Services</option>
                   <option value="other">Other</option>
                 </select>
               </div>
