@@ -11,37 +11,42 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://unrealtech.co.uk/services/google-workspace.html</loc>
+    <loc>https://unrealtech.co.uk/services/home.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://unrealtech.co.uk/services/pc-laptop-gaming.html</loc>
+    <loc>https://unrealtech.co.uk/services/business.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://unrealtech.co.uk/services/business/new-devices.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://unrealtech.co.uk/services/home-user-package.html</loc>
+    <loc>https://unrealtech.co.uk/services/business/device-support.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://unrealtech.co.uk/services/managed-it.html</loc>
+    <loc>https://unrealtech.co.uk/services/business/cybersecurity.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://unrealtech.co.uk/services/cybersecurity.html</loc>
+    <loc>https://unrealtech.co.uk/services/business/google-workspace.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://unrealtech.co.uk/services/business/it-support.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://unrealtech.co.uk/services/cloud-networking.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://unrealtech.co.uk/services/web-presence-hosting.html</loc>
+    <loc>https://unrealtech.co.uk/services/business/web-presence.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
